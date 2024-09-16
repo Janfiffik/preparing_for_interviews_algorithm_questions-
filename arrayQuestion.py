@@ -68,3 +68,86 @@ str2_0 = "ghijk"
 str2_1 = "lmn"  # => "glhminjk"
 
 # print(margeAlternately(str1 = str2_0, str2 = str2_1 ))                  
+
+# 3------------------------------------------------------------------------------------.  
+# Roman numbers converted to integer
+# I = 1
+# V = 5
+# X = 10
+# L = 50
+# C = 100
+# D = 500
+# M = 1000
+
+
+def romanToInt(romanNum: str) -> int:
+    romanNumbers: dict = {
+        "I": 1, "V": 5, "X": 10,
+        "L": 50, "C": 100, "D": 500,
+        "M": 1000
+    }
+    strToArr: list[str] = [i for i in romanNum] # -> convert str to and array
+    arrToNums: list[int] = []
+    
+    for i in range(len(strToArr)):
+        number: int = romanNumbers[strToArr[i]]
+        arrToNums.append(number)
+        
+        if i > 0 and number > arrToNums[i - 1]:
+            arrToNums[i] = arrToNums[i] - 2 * arrToNums[i-1]
+            
+    return sum(arrToNums)
+
+# Test cases:
+romanStr1 = "III"     # => 3
+romanStr2 = "LVIII"   # => 58
+romanStr3 = "MCMXCIV" # => 1994
+romanStr4 = "IX"        # => 9
+
+#print(romanToInt(romanNum = romanStr4))       
+
+# 4------------------------------------------------------------------------------------.     
+# Write function that returns boolean if first string is subsequence of second string
+def isSubsequence(s: str, t: str) -> bool:
+    i: int = 0
+    for char in t:
+        if i < len(s) and s[i] == char:
+            i += 1
+    return i == len(s)
+
+# Test cases:
+
+subS1: str = "fbc"
+string1: str = "cdafb"   # => False
+
+subS2: str = "aaaa"
+string2: str = "abbaaaa" # => True
+
+#print(isSubsequence(s = subS2, t = string2))
+
+# 5------------------------------------------------------------------------------------.
+# Function that takes an list of integers and returns highest possible. 
+# Lowest possible number need to have lower index than highest one due to index should represent a day on market
+# [1, 2, 4, 6, 7] => 6
+# [7, 6, 5, 4, 2] => 0
+
+
+def maxProfit(prices: list[int]) -> int:
+    highest: int = 0
+    min_price: int = prices[0]
+    
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        elif price - min_price > highest:
+            highest = price - min_price
+    
+    return highest 
+
+# Test cases:
+prices1: list[int] = [1, 2, 7, 8, 2, 6, 5, 4, 1, 7, 15, 2, 14, 3] # => 14
+prices2: list[int] = [2, 1, 5, 7, 4, 1, 3, 7, 8]                  # => 7
+prices3: list[int] = [7, 4, 2, 1]                                 # => 0
+ 
+# print(maxProfit(prices = prices3))
+         
