@@ -101,3 +101,8 @@ def maxProfit(prices: list[int]) -> int:
             highest = price - min_price
     
     return highest 
+
+
+# -------------------------------SOLUTION 6-------------------------------
+def longestCommonPrefix(strs: list[str]) -> str:
+    pass

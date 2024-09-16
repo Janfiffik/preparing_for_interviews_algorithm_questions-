@@ -1,4 +1,4 @@
-from answers import arrayAnswers as answers
+from answers import arrayAnswers as arrAnswers
 
 # These questions comes from [https://algomap.io/]
 # Feel free to add more TEST CASES for any Exercise you want.
@@ -21,8 +21,8 @@ nums1_2 = [-1, -3, -2, -5, 1, 5, 2]                # => 1
 # print(findClosestNumber(nums = nums1_2))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
  
-# Answer:
-#print(answers.findClosestNumber(nums = nums1_2))
+# Solution:
+#print(arrAnswers.findClosestNumber(nums = nums1_2))
 
 
 
@@ -44,8 +44,8 @@ str2_1 = "lmn"  # => "glhminjk"
 # print(margeAlternately(str1 = str2_0, str2 = str2_1 ))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-# Answer:
-# print(answers.margeAlternately(str1 = str2_0, str2 = str2_1 ))                  
+# Solution:
+# print(arrAnswers.margeAlternately(str1 = str2_0, str2 = str2_1 ))                  
 
 
 
@@ -75,8 +75,8 @@ romanStr4 = "IX"      # => 9
 # print(romanToInt(romanNum = romanStr4))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-# Answer:
-#print(answers.romanToInt(romanNum = romanStr4))       
+# Solution:
+#print(arrAnswers.romanToInt(romanNum = romanStr4))       
 
 
 # ________________________________________ 4 _________________________________________________      
@@ -103,26 +103,52 @@ string2: str = "abbaaaa" # => True
 # print(isSubsequence(s = subS2, t = string2))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-# Answer:
-#print(answers.isSubsequence(s = subS2, t = string2))
+# Solution:
+#print(arrAnswers.isSubsequence(s = subS2, t = string2))
 
 
 
 # ________________________________________ 5 _________________________________________________ 
-# Function that takes an list of integers and returns highest possible. 
+# Function that takes an list of integers and returns highest possible earning. 
 # Indexes in list represents days.
 # Lowest possible number need to have lower index than highest one due to index should represent a day on market
-# YOU CAN'T sell earlier than you buy STOCK from market
+# YOU CAN'T sell earlier than you can buy STOCK from market.
 # [1, 2, 4, 6, 7] => 6
 # [7, 6, 5, 4, 2] => 0
-
-
-
 
 # Test cases:
 prices1: list[int] = [1, 2, 7, 8, 2, 6, 5, 4, 1, 7, 15, 2, 14, 3] # => 14
 prices2: list[int] = [2, 1, 5, 7, 4, 1, 3, 7, 8]                  # => 7
 prices3: list[int] = [7, 4, 2, 1]                                 # => 0
- 
-# print(maxProfit(prices = prices3))
-         
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+
+#print(maxProfit(prices = prices3))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+# print(arrAnswers.maxProfit(prices = prices3))
+
+
+
+# ________________________________________ 6 _________________________________________________          
+# Find longest common prefix in list of strings.
+# Prefix: first matching characters in all strings within list.
+
+# Test case:
+strs0 = ["flower", "flow", "flight"]                            # => "fl"
+strs1 = ["dog", "cat", "horse", "wood"]                         # => ""
+strs2 = ["interspecies", "interstellar", "interstate", "inter"] # => "inter"
+strs3 = ["a", "ab", "abc", "abcd"]                              # => "a"
+strs4 = ["", "apple", "app"]                                    # => ""  
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+#print(longestCommonPrefix(strs = strs1))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+print(arrAnswers.longestCommonPrefix(strs = strs0))
