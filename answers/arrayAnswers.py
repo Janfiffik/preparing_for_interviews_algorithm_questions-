@@ -94,15 +94,34 @@ def maxProfit(prices: list[int]) -> int:
     highest: int = 0
     min_price: int = prices[0]
     
-    for price in prices:
-        if price < min_price:
-            min_price = price
-        elif price - min_price > highest:
-            highest = price - min_price
-    
+    for price in prices:                    # Iterates trough list prices.
+        if price < min_price:               # Checks if current price is lower than min_price
+            min_price = price               # If True. price assign as new min_price 
+        elif price - min_price > highest:   # checks if price - min_price > highest
+            highest = price - min_price     # if True new highest is created 
+                                            # If all iteration fails highest stay 0
     return highest 
 
 
 # -------------------------------SOLUTION 6-------------------------------
 def longestCommonPrefix(strs: list[str]) -> str:
-    pass
+    if not strs:
+            return ""                                                 # If there are no values in list just return ""
+ 
+    shortestWord: str = min(strs, key=len)                            # Gets shortest word from list
+
+    wordIndex: int = 0    
+    while len(strs) > wordIndex:
+        isItPrefix: bool = strs[wordIndex].startswith(shortestWord)   # Gets bool TRUE OR FALSE for shortestWord in strs
+        if isItPrefix:                                                # If True Jumps on other word 
+            wordIndex += 1
+        elif not isItPrefix:                                          # if False shortestWord get rid of last character
+            shortestWord = shortestWord[:-1]                          # If length of shortestWord becomes 0 returns ""
+            if len(shortestWord) == 0:                                # Else continue in loop 
+                return ""
+        return shortestWord                                           # After executing whole for loop returns shortestWord 
+    
+    
+    
+# -------------------------------SOLUTION 7-------------------------------    
+    

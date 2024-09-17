@@ -144,11 +144,12 @@ strs1 = ["dog", "cat", "horse", "wood"]                         # => ""
 strs2 = ["interspecies", "interstellar", "interstate", "inter"] # => "inter"
 strs3 = ["a", "ab", "abc", "abcd"]                              # => "a"
 strs4 = ["", "apple", "app"]                                    # => ""  
-
+strs5 = [""]
+strs6 = ["", "a"]
 # Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 #print(longestCommonPrefix(strs = strs1))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-print(arrAnswers.longestCommonPrefix(strs = strs0))
+print(arrAnswers.longestCommonPrefix(strs = strs2))
