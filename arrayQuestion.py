@@ -148,8 +148,40 @@ strs5 = [""]
 strs6 = ["", "a"]
 # Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
+
+
 #print(longestCommonPrefix(strs = strs1))
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-print(arrAnswers.longestCommonPrefix(strs = strs2))
+#print(arrAnswers.longestCommonPrefix(strs = strs2))
+
+
+
+# ________________________________________ 7 _________________________________________________  
+
+# Group the elements of array into ranges that are continuous.
+# That is, in one range their should not be any number absent in array.
+# And we need to minimize the different ranges we use, so try to take as big range as possible.
+# At each element, make a different range only when you find some number absent in between current and last element,
+# otherwise expand the current range by1
+
+# Input: nums: list[int] = [0, 2, 3, 4, 6, 8, 9] => list[str] = ["0", "2->4", "6", "8->9"]
+
+# Test case:
+nums2_0: list[int] = [0, 2, 3, 4, 6, 8, 9 ]        # => ["0", "2->4", "6", "8->9"]
+nums2_1: list[int] = [1, 3, 4, 5, 6, 8, 9, 12, 13] # => ["1", "3->6", "8->9", "12->13"]
+nums2_2: list[int] = [0, 1, 2, 4, 5, 7]            # => ["0->2", "4->5", "7"] 
+nums2_3: list[int] = [1, 3]                        # => ["1", "3"]
+nums2_4: list[int] = []                            # => []  
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+
+#print(summaryRanges( nums = nums2_0))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+# print(arrAnswers.summaryRanges( nums = nums2_4))

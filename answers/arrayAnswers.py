@@ -124,4 +124,40 @@ def longestCommonPrefix(strs: list[str]) -> str:
     
     
 # -------------------------------SOLUTION 7-------------------------------    
+def summaryRanges(nums: list[int]) -> list[str]:                       
+    new_range: str = ""                                               # variable for storing range string
+    rangeNum: int = 0                                                 # variable used for comparison of current itteration and last rangeNum
+    rangeList: list[str] = []                                         # list of ranges for returning
     
+    for i in range(len(nums)):                                        # Iterates trough list of given numbers
+        nextNum: int = nums[i+1] if i + 1 < len(nums) else nums[i]    # ternary operation for getting next Number      
+        
+        if not new_range:                                             # Checks if new_range is empty string 
+            new_range += f"{nums[i]}"                                 # Appending current number to new_range string
+            rangeNum = nums[i]                                        # rangeNum = current number from list
+            
+            if i == len(nums) - 1:                                    # if it is last itteration
+                rangeList.append(new_range)                           # appends new_range string to list   
+                return rangeList                                      # Returns rangeList as output of function 
+            
+        elif rangeNum + 1 == nums[i] and nums[i] == nextNum - 1:      # compares if last iteration +1 and current one and next iteration are continuous numbers  
+            rangeNum = nums[i]                                        # If True current num becomes rangeNum in next itteration
+            continue                                                  # Skips to next itteration
+        
+        elif rangeNum + 1 == nums[i] and nums[i] != nextNum - 1:      # Checks if last and current numbers are continous.   
+            new_range += f"->{nums[i]}"                               # If True current number is apended to new_range string as ->currentNum" 
+            rangeList.append(new_range)                               # Appends finished new_range to rangeList
+            new_range = ""                                            # resets new_range and rangeNum to empty string and 0
+            rangeNum = 0
+               
+        else:
+            rangeList.append(new_range)                               # If all upper conditions fails therefore number is not continous from any side 
+            new_range = f"{nums[i]}"                                  # appends number to newRange
+            rangeNum = nums[i] 
+                  
+            if i == len(nums) - 1:                                    # If number was last 
+                rangeList.append(f"{nums[i]}")                        # Append it and return whole rangeList
+                return rangeList
+                 
+            
+    return rangeList        
