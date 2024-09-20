@@ -28,14 +28,8 @@ def findClosestNumber(nums: list[int]) -> int:
 def margeAlternately(str1: str, str2: str) -> str:
     wordlen1: int = len(str1)
     wordlen2: int = len(str2)
-    wordLen: int = 0
-    newString: str = ""
-    
-    # Checks which word is shorter for next for loop to avoid Index out of range.   
-    if wordlen1 < wordlen2:
-        wordLen = wordlen1
-    else:
-        wordLen = wordlen2
+    wordLen: int = min([wordlen1, wordlen2])  # gets shortest word.
+    newString: str = ""        
     
     # Loops ower both words and add characters one by one to newString 
     for i in range(0, wordLen):
@@ -161,3 +155,48 @@ def summaryRanges(nums: list[int]) -> list[str]:
                  
             
     return rangeList        
+
+
+
+# -------------------------------SOLUTION 8-------------------------------   
+def productExceptSelf(nums: list[int]) -> list[int]:   # nums: list[int] = [1, 2, 3, 4]
+    
+    numsLength = len(nums)             # Gets length of the list
+    output = [1] * numsLength          # Creates second list named output 
+                                       # If numsLength == 4 => output = [1, 1, 1, 1]
+    print(f"Length of the input list: {numsLength}")
+    print(f"Created new list in same length:\n {output}")
+    
+    print("----Calculating PREFIX products-----")
+    # Calculate prefix products
+    prefix = 1                                                         
+    for i in range(numsLength):
+        print(f"Index number from left to right: {i}")       
+        output[i] = prefix
+        print(f"Setting number in output at index: {i} with value: {prefix}")
+        print(f"Altered output list: \n{output}")             
+        prefix *= nums[i]
+        if i < numsLength - 1:
+            print(f"New prefix for next iteration: \n {round(prefix/nums[i])} X {nums[i]} = {prefix}")             
+    
+    print("----Calculating POSTFIX products-----")
+    # Calculate postfix products and multiply with the result
+    postfix = 1
+    for i in range(numsLength -1, -1, -1):    # Iterates from right to left 
+        print(f"Index number from right to left: {i}") 
+        output[i] *= postfix
+        print(f"Calculating new value in output at index: {i} by {round(output[i]/postfix)} X {postfix}")
+        print(f"Altered output list with postfix: \n{output}")                   
+        postfix *= nums[i]                     
+        print(f"New postfix: \n {round(postfix / nums[i])} X {nums[i]} = {postfix}")
+        
+    return output
+
+
+
+#  -------------------------------SOLUTION 9-------------------------------     
+def merge(intervals: list[list[int]]) -> list[list[int]]:
+    output: list[list[int]] = []
+    sortedIntervals = sorted([sorted(i, reverse=False) for i in intervals], reverse = False) # Sorts all values in array.
+    print(sortedIntervals)
+    

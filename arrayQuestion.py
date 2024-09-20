@@ -185,3 +185,53 @@ nums2_4: list[int] = []                            # => []
 
 # Solution:
 # print(arrAnswers.summaryRanges( nums = nums2_4))
+
+
+
+# ________________________________________ 8 _________________________________________________
+# Create function with name productExceptSelf, which accepts list with numbers.
+# Which number multiplay by all other values except nums[i]
+# list[1, 2, 4, 5] => [n1 = 2 * 4 * 5, n2 = 1 * 4 * 5, n3 = 1 * 2 * 5, n4 = 1 * 2 * 4] => [40, 20, 10, 8]
+# list[4, 5, 6, 7, 8] => [n1 = 5*6*7*8, n2 = 4*6*7*8, n3 = 4*5*7*8, n4=4*5*6*8, n5 = 4*5*6*7] => []  
+
+# Test case:
+nums3_0: list[int] = [1, 2, 3, 4, 5]
+nums3_1: list[int] = [0, 2, 3, 8, 7]
+nums3_2: list[int] = [4, 6, 2, 5, 8]
+nums3_3: list[int] = [9, 2, 3, 1, 4]
+nums3_4: list[int] = [5, 7, 8, 2, 1] # => []
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+#print(productExceptSelf( nums = nums3_0))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+#print(arrAnswers.productExceptSelf( nums = nums3_0 )) 
+
+
+
+
+# ________________________________________ 9 _________________________________________________
+# Marge intervals. 
+# Input array = [[0, 2], [1, 4], [5, 8], [9, 11], [13, 17]] => [[0, 11], [13, 17]]
+
+  
+# Test case:
+array_1: list[list[int]] = [[0, 5], [8, 4], [2, 7], [10, 12]]
+array_2: list[list[int]] = [[1, 3], [2, 6], [8, 10], [15, 18]]
+array_3: list[list[int]] = [] 
+array_3: list[list[int]] = [] 
+array_3: list[list[int]] = [] 
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+# print(merge(intervals = array_1 ))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+arrAnswers.merge(intervals = array_1)
