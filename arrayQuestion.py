@@ -234,4 +234,4 @@ array_3: list[list[int]] = []
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-arrAnswers.merge(intervals = array_1)
+print(arrAnswers.merge(intervals = array_1))

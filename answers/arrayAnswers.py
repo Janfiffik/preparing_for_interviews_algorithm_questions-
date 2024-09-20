@@ -197,6 +197,9 @@ def productExceptSelf(nums: list[int]) -> list[int]:   # nums: list[int] = [1, 2
 #  -------------------------------SOLUTION 9-------------------------------     
 def merge(intervals: list[list[int]]) -> list[list[int]]:
     output: list[list[int]] = []
-    sortedIntervals = sorted([sorted(i, reverse=False) for i in intervals], reverse = False) # Sorts all values in array.
-    print(sortedIntervals)
-    
+    newInnerList: list[int] = []
+    sortedIntervals = sorted([sorted(i, reverse=False) for i in intervals], reverse = False) # Sorts all values in array.    
+    i: int = 0
+    while i < len(sortedIntervals):
+      pass  
+                
