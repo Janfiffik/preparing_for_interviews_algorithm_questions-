@@ -196,10 +196,99 @@ def productExceptSelf(nums: list[int]) -> list[int]:   # nums: list[int] = [1, 2
 
 #  -------------------------------SOLUTION 9-------------------------------     
 def merge(intervals: list[list[int]]) -> list[list[int]]:
-    output: list[list[int]] = []
-    newInnerList: list[int] = []
-    sortedIntervals = sorted([sorted(i, reverse=False) for i in intervals], reverse = False) # Sorts all values in array.    
-    i: int = 0
-    while i < len(sortedIntervals):
-      pass  
+    output: list[list[int]] = []    
+    sortedIntervals: list[list[int]] = sorted(intervals, key=lambda x: x[0]) # Sorts all intervals based on first value    
+    print(f"Sorted 2D array: \n{sortedIntervals}")
+       
+    for interval in sortedIntervals:
+        print(f"Current element: {interval}")
+        
+        if not output or output[-1][1] < interval[0] -1:
+            print(f"If not output: {output} or output[-1][1] < interval[0] -1: {interval[0]-1}:")
+            output.append(interval)
+            print(f"Whole output array: {output}")
+            
+        else:
+            oldOutput = output[-1][1]
+            output[-1][1] = max(output[-1][1], interval[1]) 
+            print(f"output[-1][1]: {oldOutput} = max(output[-1][1], interval[1]): {output[-1][1]}, {interval[1]}")
+            print("_________________________________________________")
+            
+    return output
                 
+                
+
+#  -------------------------------SOLUTION 10 -------------------------------                     
+
+def spiralOrder(matrix: list[list[int]]) -> list[int]:
+    verticalRange: list[int] = [0, len(matrix)-1]
+    horizontalRange: list[int] = [0, len(matrix[0])-1]
+    output: list[int] = []
+    matrixSize: int = len(matrix[0]) * len(matrix) 
+    
+    print(f"Matrix info: ")
+    print(f"Vertical Range: {verticalRange}")
+    print(f"Horizontal Range: {horizontalRange}")
+    print(f"Matrix size: {matrixSize}")
+    print("-----------------------------------")
+    currentPosition: list[int] = [0, 0]  # column, row
+    reverse: bool = False
+    count: int = 0
+    
+    while count < matrixSize:        
+        print(f"Current Column: {currentPosition[0]}")
+        print(f"Current Row: {currentPosition[1]}")
+        print(f"Current element: {matrix[currentPosition[1]][currentPosition[0]]}")
+        print(f"Rewerse: {reverse}")
+        print(f"Horizontal range: {horizontalRange}")
+        print(f"Vertical range: {verticalRange}")
+        
+        if not reverse:
+            if currentPosition[1] == verticalRange[0] and currentPosition[0] < horizontalRange[1]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])   
+                currentPosition[0] += 1                
+                print("First condition")
+            
+            elif currentPosition[1] == verticalRange[0] and currentPosition[0] == horizontalRange[1]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])                
+                currentPosition[1] += 1
+                print("Second condition")                   
+                
+            elif currentPosition[1] < verticalRange[1] and currentPosition[0] == horizontalRange[1]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])
+                currentPosition[1] += 1                
+                print("Third condition")
+                
+            elif currentPosition[1] == verticalRange[1] and currentPosition[0] == horizontalRange[1]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])
+                currentPosition[0] -= 1
+                verticalRange[0] += 1                
+                reverse = True                      
+                print("Last unreversed condition") 
+                
+        else:
+            if currentPosition[1] == verticalRange[1] and currentPosition[0] > horizontalRange[0]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])
+                currentPosition[0] -= 1
+                print("First reversed condition")
+            
+            elif currentPosition[0] == horizontalRange[0] and currentPosition[1] > verticalRange[0]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])
+                currentPosition[1] -= 1                
+                print("second reversed condition")
+            
+            elif currentPosition[0] == horizontalRange[0] and currentPosition[1] == verticalRange[0]:
+                output.append(matrix[currentPosition[1]][currentPosition[0]])
+                currentPosition[0] += 1                    
+                reverse = False
+                horizontalRange[1] -= 1
+                horizontalRange[0] += 1
+                verticalRange[1] -= 1
+                print("Last reversed condition")    
+                
+                     
+        print(f"Output list: {output}")           
+        count += 1 
+        print("------------------------------------------------------------")
+        
+    return output

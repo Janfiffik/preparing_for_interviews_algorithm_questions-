@@ -220,11 +220,11 @@ nums3_4: list[int] = [5, 7, 8, 2, 1] # => []
 
   
 # Test case:
-array_1: list[list[int]] = [[0, 5], [8, 4], [2, 7], [10, 12]]
+array_1: list[list[int]] = [[0, 5], [4, 8], [2, 7], [10, 12]]
 array_2: list[list[int]] = [[1, 3], [2, 6], [8, 10], [15, 18]]
-array_3: list[list[int]] = [] 
-array_3: list[list[int]] = [] 
-array_3: list[list[int]] = [] 
+array_3: list[list[int]] = [[1,4], [4,5]] 
+array_4: list[list[int]] = [[1, 3], [4, 5], [6, 8], [9, 10]] 
+array_5: list[list[int]] = [[1,3],[2,6],[8,10],[15,18]] 
 
 # Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
@@ -234,4 +234,24 @@ array_3: list[list[int]] = []
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-print(arrAnswers.merge(intervals = array_1))
+#print(arrAnswers.merge(intervals = array_5))
+
+
+
+# ________________________________________ 10 _________________________________________________
+# Given an m x n matrix, return all elements of the matrix in spiral order.
+
+# Test case:
+matrix_1: list[list[int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] # => [1, 2, 3, 6, 9, 8, 7, 4, 5]
+matrix_2: list[list[int]] = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]] # => [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+matrix_3: list[list[int]] = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16],[17,18,19,20],[21,22,23,24]]
+matrix_4: list[list[int]] = [] 
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+# print(spiralOrder( matrix = matrix_1))
+# # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+print(arrAnswers.spiralOrder( matrix = matrix_3))
