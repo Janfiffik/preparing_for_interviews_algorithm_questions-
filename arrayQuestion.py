@@ -245,7 +245,7 @@ array_5: list[list[int]] = [[1,3],[2,6],[8,10],[15,18]]
 matrix_1: list[list[int]] = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] # => [1, 2, 3, 6, 9, 8, 7, 4, 5]
 matrix_2: list[list[int]] = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]] # => [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 matrix_3: list[list[int]] = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16],[17,18,19,20],[21,22,23,24]]
-matrix_4: list[list[int]] = [] 
+
 # Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 
 
@@ -254,4 +254,25 @@ matrix_4: list[list[int]] = []
 # # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-print(arrAnswers.spiralOrder( matrix = matrix_3))
+#print(arrAnswers.spiralOrder( matrix = matrix_3))
+
+
+
+# ________________________________________ 11 _________________________________________________
+# You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
+# Also do not create new 2D matrix. Just modify current one.
+
+# Test case:
+pic_1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+pic_2 = [[5, 1, 9, 11], [2, 4, 8, 10], [13, 3, 6, 7], [15, 14, 12, 16]]  
+pic_3 = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+# rotate(matrix = pic_1)  WARNING rotate function doesn't return enithing it just alter used matrix You need change both argument in function also
+# print(pic_1)            print statement to same variable.  
+# # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+arrAnswers.rotate(matrix = pic_2)
+print(pic_2)

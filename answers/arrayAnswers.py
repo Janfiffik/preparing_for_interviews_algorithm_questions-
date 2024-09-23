@@ -218,8 +218,7 @@ def merge(intervals: list[list[int]]) -> list[list[int]]:
                 
                 
 
-#  -------------------------------SOLUTION 10 -------------------------------                     
-
+#  -------------------------------SOLUTION 10 -------------------------------
 def spiralOrder(matrix: list[list[int]]) -> list[int]:
     verticalRange: list[int] = [0, len(matrix)-1]
     horizontalRange: list[int] = [0, len(matrix[0])-1]
@@ -292,3 +291,32 @@ def spiralOrder(matrix: list[list[int]]) -> list[int]:
         print("------------------------------------------------------------")
         
     return output
+
+
+
+#  -------------------------------SOLUTION 11 -------------------------------
+def rotate(matrix: list[list[int]]) -> None:
+    """
+    Do not return anything, modify matrix in-place instead.
+    """             
+    left, right = 0, len(matrix) - 1  # Left = 0 right = last index of matrix for example 3*3 matrix 0, 2 * 0, 2 => last index 2
+    while left < right:                                              # While left index < than right index loop executes 
+        for i in range(right - left):                                # For i in (last index, - left index) => 2 - 0 => 2-1 etc...
+            top, bottom = left, right                                # top pointer = left, right pointer becomes bottom => 0, 2 = 0 top, 2 bottom  
+            # Save top left value
+            topLeft: int = matrix[top][left + i]                     
+            
+            # move bottom left to top left
+            matrix[top][left + i] = matrix[bottom - i][left]
+            
+            # move bottom right to bottom left
+            matrix[bottom - i][left] = matrix[bottom][right - i]
+            
+            # move top right to bottom right
+            matrix[bottom][right - i] = matrix[top + i][right]
+            
+            # stored value move to top right 
+            matrix[top + i][right] = topLeft
+            
+        right -= 1
+        left += 1    
