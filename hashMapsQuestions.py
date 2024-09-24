@@ -23,4 +23,43 @@ stones1: str = "ZZ"  # => 0
 # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 # Solution:
-print(ans.numJewelsInStones(jewels = jewels1, stones = stones1))
+# print(ans.numJewelsInStones(jewels = jewels1, stones = stones1))
+
+
+
+# ________________________________________ 2 _________________________________________________ 
+# Return true or false if list contains duplicates.
+nums_1: list[int] = [1, 2, 3, 4, 5]  # => False
+nums_2: list[int] = [1, 1, 2, 3, 4, 5] # => True
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+# print(containsDuplicates(nums = nums_1))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+# print(ans.containsDuplicates(nums = nums_2))
+
+
+
+# ________________________________________ 3 _________________________________________________ 
+# Given two strings ransomNote and magazine,
+# return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+ransomNote1, magazine1 = "a", "b"                  # => False
+ransomNote2, magazine2=  "lopata", "kloktalaporum" # => True
+ransomNote3, magazine3 = "abc", "abbaccdfgrtl"     # => True
+ransomNote4, magazine4 = "aa", "aab"               # => True
+
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+
+
+# print(canConstruct(ransomNote = ransomNote1, magazine = magazine1 ))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+#print(ans.canConstruct(ransomNote = ransomNote4, magazine = magazine4))
