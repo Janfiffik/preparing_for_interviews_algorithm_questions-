@@ -47,6 +47,7 @@ nums_2: list[int] = [1, 1, 2, 3, 4, 5] # => True
 # Given two strings ransomNote and magazine,
 # return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
 
+# Test cases
 ransomNote1, magazine1 = "a", "b"                  # => False
 ransomNote2, magazine2=  "lopata", "kloktalaporum" # => True
 ransomNote3, magazine3 = "abc", "abbaccdfgrtl"     # => True
@@ -63,3 +64,39 @@ ransomNote4, magazine4 = "aa", "aab"               # => True
 
 # Solution:
 #print(ans.canConstruct(ransomNote = ransomNote4, magazine = magazine4))
+
+
+
+# ________________________________________ 4 _________________________________________________ 
+# Create function that returns boolean value if strings s and t are anagrams.
+
+s1, t1 = "jelenovipivonelej", "jelenovipivonelej"  # True 
+s2, t2 = "a", "ab"                                 # False
+s3, t3 = "abc", "cab"                              # True  
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+# print(isAnagram(s = s1, t = t1))
+# Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution
+# print(ans.isAnagram(s=s1, t=t1))
+
+# ________________________________________ 5 _________________________________________________ 
+# Return maximum numbers of Balloons in string
+
+st1: str = "ballvnvbllvooccossonaaaoarrvv" # => 2
+st2: str = "nlaebolko"                     # => 1
+st3: str = "leetcode"                      # => 0
+st4: str = "loonbalxballpoon"              # => 2
+st5: str = "krhizmmgmcrecekgyljqkldocicziihtgpqwbticmvuyznragqoyrukzopfmjhjjxemsxmrsxuqmnkrzhgvtgdgtykhcglurvppvcwhrhrjoislonvvglhdciilduvuiebmffaagxerjeewmtcwmhmtwlxtvlbocczlrppmpjbpnifqtlninyzjtmazxdbzwxthpvrfulvrspycqcghuopjirzoeuqhetnbrcdakilzmklxwudxxhwilasbjjhhfgghogqoofsufysmcqeilaivtmfziumjloewbkjvaahsaaggteppqyuoylgpbdwqubaalfwcqrjeycjbbpifjbpigjdnnswocusuprydgrtxuaojeriigwumlovafxnpibjopjfqzrwemoinmptxddgcszmfprdrichjeqcvikynzigleaajcysusqasqadjemgnyvmzmbcfrttrzonwafrnedglhpudovigwvpimttiketopkvqw"
+# Your solutions go here: vvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+
+
+# print(maxNumberOfBalloons(text: str))
+# # Your solution: ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+# Solution:
+print(ans.maxNumberOfBalloons(text = st5))
